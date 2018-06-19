@@ -78,13 +78,12 @@ export default class HomeScreen extends React.Component {
           tools. {learnMoreButton}
         </Text>
       );
-    } else {
-      return (
-        <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
-        </Text>
-      );
     }
+    return (
+      <Text style={styles.developmentModeText}>
+          You are not in development mode, your app will run at full speed.
+      </Text>
+    );
   }
 
   _handleLearnMorePress = () => {
@@ -92,9 +91,7 @@ export default class HomeScreen extends React.Component {
   };
 
   _handleHelpPress = () => {
-    WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
-    );
+    WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes');
   };
 }
 

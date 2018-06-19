@@ -36,8 +36,8 @@ export default class AuthScreen extends React.Component {
 
   _handleFacebookLogin = async () => {
     try {
-      const { type, token } = await Facebook.logInWithReadPermissionsAsync('153611638586266', { 
-        permissions: ['public_profile'] 
+      const { type, token } = await Facebook.logInWithReadPermissionsAsync('153611638586266', {
+        permissions: ['public_profile'],
       });
 
       console.log(type);
