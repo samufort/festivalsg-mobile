@@ -1,0 +1,17 @@
+[ignore]
+.*/node_modules/react-virtualized/dist/.*
+.*/node_modules/react-i18next/src/.*
+.*/node_modules/react-infinite/src/.*
+
+[include]
+
+[libs]
+flow-typed
+
+[lints]
+
+[options]
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src
+
+[strict]
