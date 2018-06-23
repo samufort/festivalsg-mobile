@@ -1,5 +1,4 @@
-// @flow
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Image,
   Platform,
@@ -13,7 +12,7 @@ import { WebBrowser } from 'expo';
 
 import MonoText from '../components/StyledText';
 
-export default class HomeScreen extends React.Component {
+export default class HomeScreen extends Component {
   static navigationOptions = {
     header: null,
   };
@@ -24,11 +23,7 @@ export default class HomeScreen extends React.Component {
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
             <Image
-              source={
-                __DEV__
-                  ? require('../../assets/images/robot-dev.png')
-                  : require('../../assets/images/robot-prod.png')
-              }
+              source={require('../../assets/images/robot-prod.png')}
               style={styles.welcomeImage}
             />
           </View>
@@ -66,23 +61,16 @@ export default class HomeScreen extends React.Component {
   }
 
   _maybeRenderDevelopmentModeWarning() {
-    if (__DEV__) {
-      const learnMoreButton = (
-        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
+    const learnMoreButton = (
+      <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
           Learn more
-        </Text>
-      );
+      </Text>
+    );
 
-      return (
-        <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will be slower but you can use useful development
-          tools. {learnMoreButton}
-        </Text>
-      );
-    }
     return (
       <Text style={styles.developmentModeText}>
-        You are not in development mode, your app will run at full speed.
+          Development mode is enabled, your app will be slower but you can use useful development
+          tools. {learnMoreButton}
       </Text>
     );
   }
