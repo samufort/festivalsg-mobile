@@ -22,9 +22,6 @@
     ],
     "ios": {
       "supportsTablet": true
-    },
-    "facebookScheme": "fb153611638586266",
-    "facebookAppId": "153611638586266",
-    "facebookDisplayName": "Festival de Science et Génie"
+    }
   }
 }

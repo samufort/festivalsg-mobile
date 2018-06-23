@@ -2,32 +2,46 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
-    "build": "babel src/ -d lib/",
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll",
-    "lint": "eslint src scripts",
-    "flow": "flow"
+    "verify": "jest --colors", 
+    "test": "yarn lint && yarn flow && yarn verify",
+    "lint": "eslint src",
+    "pretty": "prettier --semi true --print-width 100 --single-quote --trailing-comma all --write \"src/**/*.js\"",
+    "precommit": "lint-staged && yarn test",
+    "flow": "flow",
+    "flow-stop": "flow stop"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn pretty",
+      "git add"
+    ]
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
-    "eslint-plugin-react-native": "^3.2.1",
     "expo": "^28.0.0",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-28.0.0.tar.gz",
     "react-navigation": "2.3.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.3",
+    "babel-eslint": "^8.2.4",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-eslint-comments": "^2.0.2",
+    "eslint-plugin-flowtype": "^2.49.3",
     "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^21.17.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.9.1",
-    "flow-bin": "^0.74.0",
-    "jest-expo": "^28.0.0"
+    "flow-bin": "^0.75.0",
+    "husky": "^0.14.3",
+    "jest-expo": "^28.0.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.5"
   }
 }

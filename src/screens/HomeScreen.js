@@ -25,8 +25,8 @@ export default class HomeScreen extends React.Component {
             <Image
               source={
                 __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
+                  ? require('../../assets/images/robot-dev.png')
+                  : require('../../assets/images/robot-prod.png')
               }
               style={styles.welcomeImage}
             />
@@ -42,7 +42,7 @@ export default class HomeScreen extends React.Component {
             </View>
 
             <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload. toto
+              Change this text and your app will automatically reload.
             </Text>
           </View>
 
@@ -81,7 +81,7 @@ export default class HomeScreen extends React.Component {
     }
     return (
       <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
+        You are not in development mode, your app will run at full speed.
       </Text>
     );
   }
@@ -91,7 +91,9 @@ export default class HomeScreen extends React.Component {
   };
 
   _handleHelpPress = () => {
-    WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes');
+    WebBrowser.openBrowserAsync(
+      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes',
+    );
   };
 }
 
