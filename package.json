@@ -8,7 +8,8 @@
     "pretty": "prettier --semi true --print-width 100 --single-quote --trailing-comma all --write \"src/**/*.js\"",
     "precommit": "lint-staged && yarn validate",
     "flow": "flow",
-    "flow-stop": "flow stop"
+    "flow-stop": "flow stop",
+    "festival": "exp start"
   },
   "lint-staged": {
     "*.js": [
