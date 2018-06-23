@@ -3,17 +3,20 @@ import { Icon } from 'expo';
 
 import Colors from '../constants/Colors';
 
-export default class TabBarIcon extends React.Component {
-  render() {
-    const { name, focused } = this.props;
+type Props = {
+  name: Text,
+  focused: Boolean,
+};
 
-    return (
-      <Icon.Ionicons
-        name={name}
-        size={26}
-        style={{ marginBottom: -3 }}
-        color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
-      />
-    );
-  }
+function TabBarIcon({ name, focused }: Props) {
+  return (
+    <Icon.Ionicons
+      name={name}
+      size={26}
+      style={{ marginBottom: -3 }}
+      color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+    />
+  );
 }
+
+export default TabBarIcon;

@@ -2,11 +2,11 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
-    "verify": "jest --colors", 
-    "test": "yarn lint && yarn flow && yarn verify",
+    "test": "jest --colors", 
+    "validate": "yarn lint && yarn flow && yarn test",
     "lint": "eslint src",
     "pretty": "prettier --semi true --print-width 100 --single-quote --trailing-comma all --write \"src/**/*.js\"",
-    "precommit": "lint-staged && yarn test",
+    "precommit": "lint-staged && yarn validate",
     "flow": "flow",
     "flow-stop": "flow stop"
   },
