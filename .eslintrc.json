@@ -11,11 +11,6 @@
     "es6": true,
     "browser": true
   },
-  "settings": {
-    "import/resolver": {
-      "babel-module": {}
-    }
-  },
   "rules": {
     "indent": [1, 2, {"SwitchCase": 1}],
     "comma-dangle": 1,
@@ -83,9 +78,6 @@
     "quote-props": 0,
     "import/no-mutable-exports": 0,
     "import/no-named-as-default": 0
-  },
-  "ecmaFeatures": {
-      "jsx": true
   },
   "globals": {
       "__DEV__": true
