@@ -13,7 +13,7 @@
   "lint-staged": {
     "*.js": [
       "yarn pretty",
-      "git add ."
+      "git add"
     ]
   },
   "jest": {
