@@ -2,7 +2,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
-    "test": "jest --colors", 
+    "test": "jest --colors",
     "validate": "yarn lint && yarn flow && yarn test",
     "lint": "eslint src",
     "pretty": "prettier --semi true --print-width 100 --single-quote --trailing-comma all --write \"src/**/*.js\"",
@@ -13,7 +13,7 @@
   "lint-staged": {
     "*.js": [
       "yarn pretty",
-      "git add"
+      "git add ."
     ]
   },
   "jest": {
@@ -24,7 +24,8 @@
     "expo": "^28.0.0",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-28.0.0.tar.gz",
-    "react-navigation": "2.3.1"
+    "react-navigation": "2.3.1",
+    "react-test-renderer": "^16.4.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.4",
