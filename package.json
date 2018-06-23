@@ -3,16 +3,16 @@
   "private": true,
   "scripts": {
     "test": "jest --colors",
-    "validate": "yarn lint && yarn flow && yarn test",
+    "validate": "yarn lint && flow stop && flow && yarn test",
     "lint": "eslint src/",
-    "pretty": "prettier --semi true --print-width 100 --single-quote --trailing-comma all --write \"src/**/*.js\"",
-    "precommit": "lint-staged && yarn validate",
     "flow": "flow",
     "flow-stop": "flow stop",
-    "festival": "exp start"
+    "festival": "exp start",
+    "pretty": "prettier --semi true --print-width 100 --single-quote --trailing-comma all --write \"src/**/*.js\"",
+    "precommit": "lint-staged && yarn validate"
   },
   "lint-staged": {
-    "*.js": [
+    "src/*.js": [
       "yarn pretty",
       "git add"
     ]

@@ -5,9 +5,18 @@ import {
 import {
   AppLoading, Asset, Font, Icon,
 } from 'expo';
+import { Provider } from 'react-redux';
+import storeProvider from './src/redux/storeProvider';
+import configureStore from './src/redux/configureStore';
 import AppNavigator from './src/navigation/AppNavigator';
 
+
 export default class App extends React.Component {
+  constructor() {
+    super();
+    storeProvider.init(configureStore);
+  }
+
   state = {
     isLoadingComplete: false,
   };
@@ -28,7 +37,9 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppNavigator />
+        <Provider store={storeProvider.get()}>
+          <AppNavigator />
+        </Provider>
       </View>
     );
   }
