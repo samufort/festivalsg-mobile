@@ -63,14 +63,14 @@ export default class HomeScreen extends Component {
   _maybeRenderDevelopmentModeWarning() {
     const learnMoreButton = (
       <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Learn more
+        Learn more
       </Text>
     );
 
     return (
       <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will be slower but you can use useful development
-          tools. {learnMoreButton}
+        Development mode is enabled, your app will be slower but you can use useful development
+        tools. {learnMoreButton}
       </Text>
     );
   }

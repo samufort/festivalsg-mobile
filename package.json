@@ -12,9 +12,8 @@
     "precommit": "lint-staged && yarn validate"
   },
   "lint-staged": {
-    "src/*.js": [
-      "yarn pretty",
-      "git add"
+    "src/": [
+      "git add ."
     ]
   },
   "jest": {

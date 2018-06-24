@@ -7,5 +7,6 @@ export default createSwitchNavigator(
   {
     App: MainTabNavigator,
     Auth: AuthNavigator,
-  }, { initialRouteName: 'Auth' },
+  },
+  { initialRouteName: 'Auth' },
 );
