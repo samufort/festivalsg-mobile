@@ -1,9 +1,9 @@
 // @flow
 import AuthenticationAPI from './api';
 
-export const LOGIN_REQUEST = 'auth/LOGIN_REQUEST';
-export const LOGIN_SUCCESS = 'auth/LOGIN_SUCCESS';
-export const LOGIN_FAILURE = 'auth/LOGIN_FAILURE';
+export const LOGIN_REQUEST = 'festival/LOGIN_REQUEST';
+export const LOGIN_SUCCESS = 'festival/LOGIN_SUCCESS';
+export const LOGIN_FAILURE = 'festival/LOGIN_FAILURE';
 
 export function authenticate(accessToken: String) {
   return async (dispatch: any) => {
